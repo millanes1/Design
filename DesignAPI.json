@@ -1,0 +1,923 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "RESTful resources",
+        "version": "1.0",
+        "title": "RESTful API"
+    },
+    "host": "localhost:8080",
+    "tags": [
+        {
+            "name": "aircrafts"
+        },
+        {
+            "name": "labours"
+        },
+        {
+            "name": "tools"
+        },
+        {
+            "name": "parts"
+        },
+        {
+            "name": "tasks"
+        },
+        {
+            "name": "workpackages"
+        }
+    ],
+    "paths": {
+        "/aircrafts": {
+            "get": {
+                "tags": [
+                    "aircrafts"
+                ],
+                "summary": "Get the all aircraft",
+                "description": "Returns aircraft as list",
+                "operationId": "Aircraft.findAll",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Aircraft"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/aircrafts/{tail}": {
+            "get": {
+                "tags": [
+                    "aircrafts"
+                ],
+                "summary": "Get Task By Id",
+                "description": "Returns task as Object",
+                "operationId": "Aircraft.getById",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tail",
+                        "in": "path",
+                        "description": "Identificator tail",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Aircraft by Id",
+                        "schema": {
+                            "$ref": "#/definitions/Aircraft"
+                        }
+                    }
+                }
+            }
+        },
+        "/labours": {
+            "get": {
+                "tags": [
+                    "labours"
+                ],
+                "summary": "Get the all labour",
+                "description": "Returns labour as list",
+                "operationId": "Labour.findAll",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Labour"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/labours/task/{id}": {
+            "get": {
+                "tags": [
+                    "labours"
+                ],
+                "summary": "Find Labours By taskId",
+                "description": "Returns labour as list",
+                "operationId": "Labour.findByTaskId",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Labour"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/labours/{id}": {
+            "get": {
+                "tags": [
+                    "labours"
+                ],
+                "summary": "Get Labour By Id",
+                "description": "Returns labour as Object",
+                "operationId": "Labour.getById",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Labour"
+                        }
+                    }
+                }
+            }
+        },
+        "/parts": {
+            "get": {
+                "tags": [
+                    "parts"
+                ],
+                "summary": "Get the all part",
+                "description": "Returns  Part as list",
+                "operationId": "Part.findAll",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Part"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/parts/task/{id}": {
+            "get": {
+                "tags": [
+                    "parts"
+                ],
+                "summary": "Find Parts By taskId",
+                "description": "Returns part as list",
+                "operationId": "Part.findByTaskId",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Part"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/parts/{id}": {
+            "get": {
+                "tags": [
+                    "parts"
+                ],
+                "summary": "Get Part By Id",
+                "description": "Returns part as Object",
+                "operationId": "Part.getById",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Part"
+                        }
+                    }
+                }
+            }
+        },
+        "/tasks": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Get the all task",
+                "description": "Returns task as list",
+                "operationId": "Task.findAll",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Task"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tasks/aircraft/{tail}": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Find Tasks By aircraft",
+                "description": "Returns task as list",
+                "operationId": "Task.findByAircraft",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tail",
+                        "in": "path",
+                        "description": "Identifier for Tail",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Task"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tasks/barcode/{barcode}": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Get Task By Barcode",
+                "description": "Returns task as Object",
+                "operationId": "Task.getByBarcode",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "barcode",
+                        "in": "path",
+                        "description": "Visual identifier of a task in the product Line Planning",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/tasks/workpackage/{barcode}": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Find Tasks By Barcode WorkPackage",
+                "description": "Returns task as list",
+                "operationId": "Task.findByWorkPackage",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "barcode",
+                        "in": "path",
+                        "description": "Visual identifier of a WorkPackage in the product Line Planning",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Task"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tasks/{id}": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Get Task By Id",
+                "description": "Returns task as Object",
+                "operationId": "Task.getById",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Serial Identifier Task in the product Line Planning",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/tools": {
+            "get": {
+                "tags": [
+                    "tools"
+                ],
+                "summary": "Get the all tool",
+                "description": "Returns tool as list",
+                "operationId": "Tool.findAll",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Tool"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tools/task/{id}": {
+            "get": {
+                "tags": [
+                    "tools"
+                ],
+                "summary": "Find Tools By taskId",
+                "description": "Returns tool as list",
+                "operationId": "Tool.findByTaskId",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Tool"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tools/{id}": {
+            "get": {
+                "tags": [
+                    "tools"
+                ],
+                "summary": "Get Tool By Id",
+                "description": "Returns tool as Object",
+                "operationId": "Tool.getById",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Tool"
+                        }
+                    }
+                }
+            }
+        },
+        "/workpackages": {
+            "get": {
+                "tags": [
+                    "workpackages"
+                ],
+                "summary": "Get the all WorkPacakage",
+                "description": "Returns tool as list",
+                "operationId": "WorkPackage.findAll",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/WorkPackage"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/workpackages/{barcode}": {
+            "get": {
+                "tags": [
+                    "workpackages"
+                ],
+                "summary": "Get WorkPackage By barcode",
+                "description": "Returns WorkPackage as Object",
+                "operationId": "WorkPacakage.getByBarcode",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "barcode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/WorkPackage"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "WorkPackage": {
+            "type": "object",
+            "required": [
+                "barcode",
+                "location",
+                "name",
+                "status"
+            ],
+            "properties": {
+                "barcode": {
+                    "type": "string",
+                    "description": "Visual identifier of a Work Package"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of a Work Package"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of Work Package from MXI"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Location where it programming work package for you execution"
+                },
+                "beginDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time off works start"
+                },
+                "endDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time off works finish"
+                }
+            },
+            "description": "Information associated to a WorkPackage"
+        },
+        "Task": {
+            "type": "object",
+            "required": [
+                "barcode",
+                "barcodeWP",
+                "codeMxi",
+                "dueDate",
+                "dueDateLimit",
+                "duration",
+                "id",
+                "name",
+                "status",
+                "tail",
+                "type"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Identifier of a task in the product Line Planning"
+                },
+                "barcode": {
+                    "type": "string",
+                    "description": "Visual identifier of a task"
+                },
+                "codeMxi": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Code of identifier of a task in MXI"
+                },
+                "tail": {
+                    "type": "string",
+                    "description": "Registration code of an aircraft"
+                },
+                "barcodeWP": {
+                    "type": "string",
+                    "description": "Visual identifier of a Work Package"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of a task"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of task from MXI"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Classification the type of Task"
+                },
+                "dueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of defined limit for execution of task"
+                },
+                "dueDateExtended": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date extended of defined limit for execution of task"
+                },
+                "dueDateLimit": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of defined limit for execution of task, attribute for product Line Planning"
+                },
+                "yield": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Percent of programming ideal minimum for a task"
+                },
+                "duration": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Duration that has a task"
+                },
+                "priority": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Value that identifies a concept global priority"
+                },
+                "scheduleStatus": {
+                    "type": "string",
+                    "description": "Status of a task in the product Line Planning"
+                },
+                "workPackage": {
+                    "description": "workPackage",
+                    "$ref": "#/definitions/WorkPackage"
+                },
+                "aircraft": {
+                    "description": "Detail Aircraft",
+                    "$ref": "#/definitions/Aircraft"
+                },
+                "toolList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Tool"
+                    }
+                },
+                "labourList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Labour"
+                    }
+                },
+                "partList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Part"
+                    }
+                }
+            },
+            "description": "Information associated to a Task"
+        },
+        "Part": {
+            "type": "object",
+            "required": [
+                "codeGroupMxi",
+                "codeMxi",
+                "estimatedArrival",
+                "id",
+                "quantity",
+                "status",
+                "taskId"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Identifier of a part in the product Line Planning"
+                },
+                "taskId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Identifier of a task in the product Line Planning"
+                },
+                "codeMxi": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Code of identifier of a part in MXI"
+                },
+                "codeGroupMxi": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Code of identifier of a group of part in MXI"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of part from MXI"
+                },
+                "quantity": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Quantity required of the part"
+                },
+                "estimatedArrival": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date estimated arrival of part (ETA)"
+                }
+            },
+            "description": "Information associated to a Part"
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        },
+        "Labour": {
+            "type": "object",
+            "required": [
+                "id",
+                "manHrs",
+                "manRequired",
+                "skill",
+                "taskId"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "dentifier of a labour in the product Line Planning"
+                },
+                "taskId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Identifier of a task in the product Line Planning"
+                },
+                "skill": {
+                    "type": "string",
+                    "description": "Ability required for labour execution"
+                },
+                "manRequired": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "People required for labour execution"
+                },
+                "manHrs": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Man hours required for labour execution"
+                }
+            },
+            "description": "Information associated to a Labour"
+        },
+        "Aircraft": {
+            "type": "object",
+            "required": [
+                "fleet",
+                "operator",
+                "tail"
+            ],
+            "properties": {
+                "tail": {
+                    "type": "string",
+                    "description": "Identifier for Tail"
+                },
+                "fleet": {
+                    "type": "string",
+                    "description": "Identifier for Fleet"
+                },
+                "operator": {
+                    "type": "string",
+                    "description": "Identifier for operator"
+                }
+            }
+        },
+        "Tool": {
+            "type": "object",
+            "required": [
+                "codeMxi",
+                "id",
+                "name",
+                "quantity",
+                "taskId"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Identifier of a tool in the product Line Planning"
+                },
+                "taskId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Identifier of a task in the product Line Planning"
+                },
+                "codeMxi": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Code of identifier of a tool in MXI"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of a tool"
+                },
+                "quantity": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Quantity required of the tool"
+                }
+            },
+            "description": "Information associated to a Tool"
+        }
+    }
+}

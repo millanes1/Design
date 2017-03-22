@@ -1,0 +1,169 @@
+[{
+	"id": 1,
+	"barcode": "BARCODE_TK_1",
+	"codeMxi": 3,
+	"tail": "TAIL1",
+	"barcodeWP": "BC1",
+	"name": "LPTK_NAME",
+	"status": "OPEN",
+	"type": "TYPE",
+	"dueDate": "2017-03-22 12:00:00",
+	"dueDateExtended": null,
+	"dueDateLimit": "2017-03-22 12:00:00",
+	"yield": 12.0,
+	"duration": 233.0,
+	"priority": 1,
+	"scheduleStatus": "OPEN",
+	"workPackage": {
+		"barcode": "BC1",
+		"name": "WP1",
+		"status": "OPEN",
+		"location": "LOC1",
+		"beginDate": "2017-03-22 12:00:00",
+		"endDate": null
+	},
+	"aircraft": {
+		"tail": "TAIL1",
+		"fleet": "FLEET1",
+		"operator": "OPT1"
+	},
+	"toolList": [{
+		"id": 1,
+		"taskId": 1,
+		"codeMxi": 2,
+		"name": "TOOL_NAME1",
+		"quantity": 12.0
+	}, {
+		"id": 2,
+		"taskId": 1,
+		"codeMxi": 3,
+		"name": "TOOL_NAME2",
+		"quantity": 14.0
+	}],
+	"labourList": [{
+		"id": 1,
+		"taskId": 1,
+		"skill": "SKILL1",
+		"manRequired": 23,
+		"manHrs": 3332.0
+	}, {
+		"id": 2,
+		"taskId": 1,
+		"skill": "SKILL2",
+		"manRequired": 99,
+		"manHrs": 122.0
+	}],
+	"partList": [{
+		"id": 1,
+		"taskId": 1,
+		"codeMxi": 2,
+		"codeGroupMxi": 3,
+		"status": "OPEN",
+		"quantity": 32.0,
+		"estimatedArrival": "2017-03-22 12:00:00"
+	}, {
+		"id": 2,
+		"taskId": 1,
+		"codeMxi": 2,
+		"codeGroupMxi": 3,
+		"status": "OPEN",
+		"quantity": 323.0,
+		"estimatedArrival": "2017-03-22 12:00:00"
+	}, {
+		"id": 3,
+		"taskId": 1,
+		"codeMxi": 4,
+		"codeGroupMxi": 3,
+		"status": "OPEN",
+		"quantity": 34.0,
+		"estimatedArrival": "2017-03-22 12:00:00"
+	}]
+}, {
+	"id": 2,
+	"barcode": "BARCODE_TK_2",
+	"codeMxi": 2,
+	"tail": "TAIL1",
+	"barcodeWP": "BC3",
+	"name": "LPTK_NAME_1",
+	"status": "OPEN",
+	"type": "TYPE",
+	"dueDate": "2017-03-22 12:00:00",
+	"dueDateExtended": null,
+	"dueDateLimit": "2017-03-22 12:00:00",
+	"yield": 12.0,
+	"duration": 933.0,
+	"priority": 1,
+	"scheduleStatus": "OPEN",
+	"workPackage": {
+		"barcode": "BC3",
+		"name": "WP3",
+		"status": "OPEN",
+		"location": "LOC2",
+		"beginDate": "2017-03-22 12:00:00",
+		"endDate": "2017-03-22 12:00:00"
+	},
+	"aircraft": {
+		"tail": "TAIL1",
+		"fleet": "FLEET1",
+		"operator": "OPT1"
+	},
+	"toolList": [],
+	"labourList": [{
+		"id": 3,
+		"taskId": 2,
+		"skill": "SKILL1",
+		"manRequired": 233,
+		"manHrs": 3321.0
+	}],
+	"partList": []
+}, {
+	"id": 3,
+	"barcode": "BARCODE_TK_3",
+	"codeMxi": 4,
+	"tail": "TAIL2",
+	"barcodeWP": "BC4",
+	"name": "LPTK_NAME_2",
+	"status": "OPEN",
+	"type": "TYPE",
+	"dueDate": "2017-03-22 12:00:00",
+	"dueDateExtended": null,
+	"dueDateLimit": "2017-03-22 12:00:00",
+	"yield": 12.0,
+	"duration": 999.0,
+	"priority": 1,
+	"scheduleStatus": "OPEN",
+	"workPackage": {
+		"barcode": "BC4",
+		"name": "WP4",
+		"status": "OPEN",
+		"location": "LOC1",
+		"beginDate": "2017-03-22 12:00:00",
+		"endDate": null
+	},
+	"aircraft": {
+		"tail": "TAIL2",
+		"fleet": "FLEET1",
+		"operator": "OPT3"
+	},
+	"toolList": [{
+		"id": 3,
+		"taskId": 3,
+		"codeMxi": 1,
+		"name": "TOOL_NAME3",
+		"quantity": 12.0
+	}, {
+		"id": 4,
+		"taskId": 3,
+		"codeMxi": 3,
+		"name": "TOOL_NAME5",
+		"quantity": 14.0
+	}],
+	"labourList": [{
+		"id": 4,
+		"taskId": 3,
+		"skill": "SKILL2",
+		"manRequired": 939,
+		"manHrs": 1232.0
+	}],
+	"partList": []
+}]
